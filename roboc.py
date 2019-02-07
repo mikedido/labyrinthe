@@ -49,4 +49,5 @@ finished = False
 while not finished:
     move = input ('>')
     print(move)
+    carteJeu.moveRobot(move)
     

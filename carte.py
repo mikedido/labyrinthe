@@ -21,7 +21,10 @@ class Carte:
     def showLabirinthe(self):
         self.labyrinthe.showGrid()
 
-    def moveRobot(self):
+    def moveRobot(self, move):
+        direction = move[0]
+        caseNumber = move[1:len(move)]
+        
         pass
     
     def __repr__(self):
