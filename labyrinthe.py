@@ -6,11 +6,17 @@ class Labyrinthe:
 
     """Classe représentant un labyrinthe."""
 
-    def __init__(self, contenu):
+    def __init__(self, contenu, obstacles):
         self.grille = {}
         self.Numberline = 0
         self.Numbercolumn = 0
+        self.robotPosition = []
         self.setGrid(contenu)
+        self.obstacles = obstacles
+
+    """ get obstacles """
+    def getObstacles(self):
+        return self.obstacles
 
     """ set the grid"""    
     def setGrid(self, contenu):
@@ -24,7 +30,11 @@ class Labyrinthe:
             elif (value == '\r'):
                 pass
             else:
-                self.grille[i, j] = value
+                if (value == 'X'):
+                    self.grille[i, j] = ' '
+                    self.robotPosition = (i, j)
+                else:
+                     self.grille[i, j] = value
                 j+=1
         """ Set the number of line and column of the grid"""
         self.Numberline = i
@@ -35,15 +45,16 @@ class Labyrinthe:
         return self.grille
 
     """ show the grid """    
-    def showGrid(self):
+    def showGrid(self, robotLine, robotColumn):
         for i in range(0, self.Numberline):
             showLine = ''
             for j in range(0, self.Numbercolumn):
-                showLine +=self.grille[(i, j)] 
+                if (i == robotLine and j == robotColumn):
+                    showLine += 'X'
+                else:
+                    showLine +=self.grille[(i, j)] 
             print(showLine)
-            
-    """ get the position of the robot in the grid """
+
+    """ set the position of the robot in the grid """
     def getRobotPosition(self):
-        for key in self.grille.keys():
-            if ('X' == self.grille[key]):
-                return key
+        return self.robotPosition

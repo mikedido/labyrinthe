@@ -28,7 +28,8 @@ for i, carte in enumerate(cartes):
 # Si il y a une partie sauvegardée, on l'affiche, à compléter
 
 
-# ... Complétez le programme ...
+
+#gestion des erreur de choix de carte
 error=1
 while error :
     choix = input('Entrez un numéro de labyrinthe pour commencer à jouer :')
@@ -39,15 +40,18 @@ while error :
     else:
         error=0
         carteJeu = cartes[choix-1]
-        #print(cartes[choix-1].labyrinthe.showGrid())
-        #print(cartes[choix-1].labyrinthe.getRobotPosition())
 
-carteJeu.showLabirinthe()
+#affichage de la carte initial
+carteJeu.showCarte()
 
 # gestion des mouvemments 
-finished = False
-while not finished:
+win = False
+while not win:
     move = input ('>')
-    print(move)
+    if (len(move) == 1):
+        move +='1'
     carteJeu.moveRobot(move)
-    
+    carteJeu.showCarte()
+    if carteJeu.checkWin():
+        win = True
+        print('Félicitation!!! Vous avez gagner !!!')
