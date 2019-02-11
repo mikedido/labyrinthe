@@ -4,6 +4,7 @@
 
 from labyrinthe import Labyrinthe
 from robot import Robot
+import pickle
 
 class Carte:
 
@@ -63,10 +64,6 @@ class Carte:
             return True
         else:
             return False
-
-    """ save the map """
-    def saveCarte(self):
-        pass
 
     def __repr__(self):
         return "<Carte {}>".format(self.nom)
