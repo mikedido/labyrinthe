@@ -1,11 +1,8 @@
 # roboc
 
-<<<<<<< HEAD
-Roboc is a labyrinthe game. To play this game, first install python3 on your machine
-=======
-Roboc it a labyrinthe game. To play this game, first install python3 on your machine
 
->>>>>>> ba3c3fd4f7b15a9f68ef15d5f64384a3660c7990
+Roboc is a labyrinthe game. To play this game, first install python3 on your machine
+
 ### On linux
     sudo apt-get install python3.6
 ### On mac
@@ -13,7 +10,7 @@ Roboc it a labyrinthe game. To play this game, first install python3 on your mac
 
 ## How to play?
 
-<<<<<<< HEAD
+
 When we lunch the app, we must use between labyrith and you choose :
 
     1 - easy
@@ -32,13 +29,3 @@ To play just use the keyboard :
     O who asks the robot to move to the west (that is, the left of your screen);
 
 Each of the directions above followed by a number allows to advance several boxes (for example E3 to advance three boxes to the east).
-
-=======
-When we lunch the app there are two labyrith to choose :
-
-1 - easy
-2 - hard
-
-### Move the robot
-
->>>>>>> ba3c3fd4f7b15a9f68ef15d5f64384a3660c7990
